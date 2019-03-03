@@ -110,8 +110,9 @@ router.post('/create', async(req, res) => {
 //route to get all properties of all products
 router.get('/all', async(req, res) => {
     const allProducts = await Product.find();
-    const data = _.pick(allProducts, ['ID', 'Name', 'Price']);
-    res.send(data);
+
+    // const data = _.pick(allProducts, ['_id', 'Name', 'Price']);
+    res.send(allProducts);
 })
 
 //route to  get properties if specific products based on a selected id
