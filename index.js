@@ -25,7 +25,7 @@ mongoose.connect('mongodb://localhost/test_db', { useNewUrlParser: true })
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-
+NODE_ENV = 'production';
 
 app.use('/api/product', product);
 app.use('/api/category', category)
