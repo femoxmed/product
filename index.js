@@ -23,7 +23,7 @@ mongoose.connect('mongodb://localhost/test_db', { useNewUrlParser: true })
     .catch(err => { console.log(err) })
 
 app.use(express.json())
-app.use(express.urlencoded())
+app.use(express.urlencoded({ extended: true }))
 
 
 
