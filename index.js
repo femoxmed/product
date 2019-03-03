@@ -1,6 +1,6 @@
 const error = require('./middleware/error')
 const config = require('config')
-const Joi = require('Joi')
+const Joi = require('joi')
 Joi.objectId = require('joi-objectid')(Joi)
 const product = require('./routes/product');
 const category = require('./routes/category')
@@ -12,11 +12,11 @@ const app = express()
 
 const mongoose = require('mongoose')
 mongoose.Promise = global.Promise;
-const con = config.get('PrivateKey')
-if (!con) {
-    console.error('FATAL ERROR: fatal error no config set')
-    process.exit(1)
-}
+// const con = config.get('PrivateKey')
+// if (!con) {
+//     console.error('FATAL ERROR: fatal error no config set')
+//     process.exit(1)
+// }
 
 mongoose.connect('mongodb://localhost/test_db', { useNewUrlParser: true })
     .then(() => { console.log('db connected') })
